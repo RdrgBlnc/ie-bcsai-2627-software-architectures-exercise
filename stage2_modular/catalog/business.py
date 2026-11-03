@@ -31,4 +31,4 @@ def take_stock(book_id, quantity):
         raise NotFound
     if book["stock"] < quantity:
         raise NotEnoughStock
-    persistence.update_stock(book_id, book["stock"] - quantity)
+    return persistence.update_stock(book_id, book["stock"] - quantity)
